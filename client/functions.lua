@@ -1,3 +1,4 @@
+local QBCore = exports['qb-core']:GetCoreObject()
 ---Holds Playing animation
 ---@class Play
 Play = {}
@@ -15,11 +16,9 @@ local function checkSex()
 end
 
 ---Notify a person with default notificaiont
----@param message string
+---@param message string2 
 local function notify(message)
-    SetNotificationTextEntry('STRING')
-    AddTextComponentString(message)
-    DrawNotification(0, 1)
+    QBCore.Functions.Notify( message , "info")
 end
 
 ---Plays an animation
@@ -181,12 +180,9 @@ end
 ---Creates a notifications
 ---@param type string
 ---@param message string
-Play.Notification = function(type, message)
+Play.Notification = function(title , type, Time,  message)
     if cfg.useTnotify then
-        exports['t-notify']:Alert({
-            style  =  type or 'info',
-            message  =  message or 'Something went wrong...'
-        })
+        exports['okokNotify']:Alert(title, message, Time, type)
     else
         notify(message)
     end
