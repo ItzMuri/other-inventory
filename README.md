@@ -1,7 +1,7 @@
 <div align='center'><h3><a>QBCore Inventory Redesigned by !miquelmq20</a></h3></div>
 
 <br>
-<div align='center'><img style="width: 30em;" src='https://github.com/ItzMuri/other-inventory/assets/88394932/42a9f503-f24b-4693-9158-f872e297f490'/></div>
+<div align='center'><img style="width: 30em;" src='https://github.com/ItzMuri/other-inventory/assets/88394932/32deabd3-3136-42eb-b2d1-7c1bccb150a1'/></div>
 <br>
 
 # Framework
