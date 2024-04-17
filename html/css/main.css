@@ -27,7 +27,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 ::-webkit-scrollbar-thumb {
 	border-radius: 0;
-	background: #dc143c;
+	background: #898989;
 }
 
 html {
@@ -44,6 +44,13 @@ html {
 
 body {
 	overflow: hidden;
+}
+
+.fas.fa-lock {
+    font-size: 6px;
+    top: -1px;
+    right: 2px;
+    position: relative;
 }
 
 #qbcore-inventory {
@@ -65,7 +72,7 @@ body {
 
 .inv-jugador-tit {
 
-	border-bottom: .1vh solid #dc143cac;
+	border-bottom: .1vh solid #898989;
 	padding: 1vh;
 	position: absolute;
 
@@ -109,10 +116,9 @@ body {
 	height: 35.5vh;
 	max-width: 41vw;
     max-height: 81vh;
-	background-color: rgba(0,0,0,.8);
-	border-left: .2vh solid #dc143c;
+	background-color: rgba(8, 8, 8, 0.9);
+	border-left: .2vh solid #898989;
 	right: 0;
-		
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
@@ -141,15 +147,15 @@ body {
 	height: 48.5vh;
 	max-width: 41vw;
     max-height: 81vh;
-	background-color: rgba(0,0,0,.8);
-	border-left: .2vh solid #dc143c;
+	background-color: rgba(8, 8, 8, 0.9);
+	border-left: .2vh solid #898989;
 	right: 0;
 		
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
 
-.other-inventory {
+.qb-inventory {
     position: absolute;
     top: 6vh;
     right: .05vw;
@@ -170,24 +176,18 @@ body {
 }
 
 .player-inventory>.item-slot>.item-slot-key>p {
-	position: absolute !important;
-	font-weight: bolder;
-	color: rgba(141, 141, 141, 0.219);
-	text-align: left;
-	font-size: 3vh;
-	line-height: 6.5vh;
-	font-family: 'fuente';
-
-	-webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; 
-
-	background: none;
-	width: 100%;
-
-
-	text-align: center !important;
+	position: absolute; 
+    font-weight: 400; 
+    color: #31d4a9; 
+    text-shadow: 0 0 1vh #31d4a9 !important;
+    padding: .1vh; 
+    width: 2.15vh;
+    text-align: center; 
+    font-size: 1.25vh; 
+    line-height: 1.8vh; 
+    font-family: 'Oswald', sans-serif !important;
+    background-color: rgba(49, 212, 169, 0.1) !important;
+    border: 1px solid rgba(55, 55, 55, 1);
 }
 
 .inv-options {
@@ -217,8 +217,8 @@ body {
 	width: 3.51vw;
 	height: 6.5vh;
 	float: left;
-	border: .1vh solid #dc143c !important;
-	background-color:  #dc143c17 !important;
+	border: .1vh solid #898989 !important;
+	background: radial-gradient(#32343961, #32343907) !important;
 	border-radius: .6vh;
 	margin: .12vw;
 	transition: opacity 0.2s;
@@ -230,17 +230,16 @@ body {
 
 .item-slot-hoverClass {
 	opacity: .6;
-	border: .1vh solid #dc143c !important;
+	border: .1vh solid #898989 !important;
 
 }
 
 .item-slot:hover {
-	border: .1vh solid #dc143c !important;
-
+	background: rgba(46, 195, 161, 0.2) !important;
+    border: #2bae8f 2px solid !important;
+    border-radius: 10px;
 	transform: scale(0.98);
-
 	cursor: pointer;
-
 }
 
 .inv-option-item {
@@ -301,7 +300,6 @@ body {
 	float: right;
 }
 
-/*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*/
 
 .inv-option-item>p {
 	color: white;
@@ -319,17 +317,13 @@ body {
 	height: 3vh;
 	color: white;
 	margin-top: 16.8vh;
-
-	border: .1vh solid #dc143c !important;
+	border: .1vh solid #898989 !important;
 	border-radius: 0.4vh;
 	right: 0.5vw;
 	top: 9vh;
-
 	transition: .02s linear;
 	cursor: pointer;
-
 	z-index: 200;
-
 	background-image: url("./icons/plus.png") !important;
 	background-size: 1.2vh 1.2vh !important;
 	background-repeat: no-repeat !important;
@@ -346,6 +340,7 @@ body {
 .inv-option-item:hover {
 	transform: scale(1.1);
 	transition: .8s;
+    border: #2bae8f 2px solid !important;
 }
 
 .inv-option-item-disabled {
@@ -355,7 +350,7 @@ body {
 	color: white;
 	margin-top: 16.8vh;
 
-	border: .1vh solid #dc143c !important;
+	border: .1vh solid #898989 !important;
 	border-radius: 0.4vh;
 	right: 0.5vw;
 	top: 9vh;
@@ -369,12 +364,15 @@ body {
 	background-repeat: no-repeat !important;
 	background-position: center !important;
 	left: .5vw;
-
 	transition: .8s;
-
-	background-color: rgba(0, 0, 0, 0) !important;
-
+	
 	filter: grayscale(100%);
+}
+
+#inv-option-item-disabled:hover {
+	transition: .05s linear;
+	transform: scale(0.92);
+	background: rgba(46, 195, 161, 0.2) !important;
 }
 
 
@@ -395,7 +393,7 @@ body {
 	height: 3vh;
     background: none !important;
 
-	border: .1vh solid #dc143c !important;
+	border: .1vh solid #898989 !important;
 	border: none;
 	color: white;
 	border-radius: .4vh;
@@ -422,8 +420,7 @@ body {
 	position: absolute;
 	width: 3.7vw;
 	height: 7.5vh;
-
-	border: .1vh dashed #dc143c !important;
+	border: .1vh dashed #898989 !important;
 	border-radius: 0.4vh;
 	color: white;
 	letter-spacing: 0.2vh;
@@ -437,6 +434,12 @@ body {
 	background-position: center !important;
 
 	background-color: rgba(0, 0, 0, 0.115) !important;
+}
+
+#inv-option-itemuse:hover {
+	transition: .05s linear;
+	transform: scale(0.92);
+	background: rgba(46, 195, 161, 0.2) !important;
 }
 
 .inv-option-itemdar>p {
@@ -453,30 +456,33 @@ body {
 	position: absolute;
 	width: 3.7vw;
 	height: 7.5vh;
-
-	border: .1vh dashed #dc143c !important;
+	border: .1vh dashed #898989 !important;
 	border-radius: 0.4vh;
 	color: white;
 	letter-spacing: 0.2vh;
 	top: 16.5vh;
 	cursor: default;
 	left: .5vw;
-
 	background-image: url("./icons/give.png") !important;
 	background-size: 3.3vh 3.3vh !important;
 	background-repeat: no-repeat !important;
 	background-position: center !important;
-
 	background-color: rgba(0, 0, 0, 0.115) !important;
 }
+
+#inv-option-itemdar:hover {
+	transition: .05s linear;
+	transform: scale(0.92);
+	background: rgba(46, 195, 161, 0.2) !important;
+}
+
 
 .invropa {
 	position: absolute;
 	height: 16vh;
 	top: 0;
-	background-color: rgba(0,0,0,.8);
-	border-left: .2vh solid #dc143c;
-
+	background-color: rgba(8, 8, 8, 0.9);
+	border-left: .2vh solid #898989;
 	width: 25vw;
 	right: 0;
 	z-index: 10000000000000000000000000;
@@ -530,8 +536,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+	border: .1vh solid #898989 !important;
+	
 }
 
 #top:hover {
@@ -562,8 +568,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+    border: .1vh solid #898989 !important;
+	
 }
 
 #shoes:hover {
@@ -593,8 +599,8 @@ body {
 
 	float: left;
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+        border: .1vh solid #898989 !important;
+	
 }
 
 #pants:hover {
@@ -626,8 +632,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+        border: .1vh solid #898989 !important;
+	
 }
 
 #shirt:hover {
@@ -657,8 +663,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+        border: .1vh solid #898989 !important;
+	
 }
 
 #hair:hover {
@@ -689,8 +695,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+        border: .1vh solid #898989 !important;
+	
 }
 
 #neck:hover {
@@ -721,8 +727,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+        border: .1vh solid #898989 !important;
+	
 }
 
 #ear:hover {
@@ -753,8 +759,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+        border: .1vh solid #898989 !important;
+	
 }
 
 #glasses:hover {
@@ -785,8 +791,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+        border: .1vh solid #898989 !important;
+	
 }
 
 #hat:hover {
@@ -817,8 +823,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+        border: .1vh solid #898989 !important;
+	
 }
 
 #mask:hover {
@@ -849,8 +855,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+        border: .1vh solid #898989 !important;
+	
 }
 
 #bag:hover {
@@ -881,8 +887,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+        border: .1vh solid #898989 !important;
+	
 }
 
 #bracelet:hover {
@@ -913,8 +919,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+        border: .1vh solid #898989 !important;
+	
 }
 
 #watch:hover {
@@ -945,8 +951,8 @@ body {
 	float: left;
 
 	transition: .05s linear;	
-        border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+        border: .1vh solid #898989 !important;
+	
 }
 
 #gloves:hover {
@@ -978,8 +984,8 @@ body {
 
 	transition: .05s linear;
 
-    border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+    border: .1vh solid #898989 !important;
+	
 }
 
 #visor:hover {
@@ -1011,8 +1017,8 @@ body {
 
 	transition: .05s linear;
 
-    border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+    border: .1vh solid #898989 !important;
+	
 }
 
 #vest:hover {
@@ -1043,16 +1049,13 @@ body {
 	float: left;
 
 	transition: .05s linear;
-    border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
-
+    border: .1vh solid #898989 !important;
 }
 
 #reset:hover {
 	transition: .05s linear;
 	transform: scale(1.03);
 }
-/*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*//*BOTONES*/
 
 .btn-combine {
 	display: none;
@@ -1122,7 +1125,7 @@ body {
 .item-slot-quality-bar {
 	position: absolute;
 	height: 90%;
-	background-color: #dc143c !important;
+	background-color: #32343961 !important;
 	z-index: 1;
 	margin-top: 1.85vh;
 
@@ -1208,7 +1211,7 @@ body {
 }
 
 .other-inv-label { /*marca5*/
-	border-bottom: .1vh solid #dc143cac;
+	border-bottom: .1vh solid #32343961ac;
 	padding: 1vh;
 	position: absolute;
 
@@ -1293,7 +1296,7 @@ body {
 	width: 14vw;
 	background: linear-gradient(-45deg, #121922, #0d1a22,#04121f,#061722,#010d1b);
     box-shadow: inset 0 0 20px 14px rgba(255, 255, 255, 0.089);
-	border-left: 0.15vh solid rgb(255, 255, 255);
+	border-left: .2vh solid #898989;
 	border-radius: .4vh;
 	margin: 50vh auto 0;
 	transform: translateY(-50%);
@@ -1445,7 +1448,7 @@ body {
 	width: 2.51vw;
 	height: 4.5vh;
 	float: left;
-	border: .1vh solid #dc143c !important;
+	border: .1vh solid #898989 !important;
 	background-color: rgba(0, 0, 0, 0.6);
 	border-radius: .6vh;
 	margin-right: .12vw;
@@ -1838,7 +1841,7 @@ display: none !important;
   
   ::selection {
 	color: #ffffff;
-	background: #dc143c;
+	background: #32343961;
 	padding: 1vh;
   }
 
@@ -1856,7 +1859,7 @@ display: none !important;
 .inv-anims-int {
     position: absolute;
 	background-color: rgba(0, 255, 64, 0);
-	border-left: .2vh solid #dc143c;
+	border-left: .2vh solid #898989;
 	width: 25vw;
     height: 22.8vh;
 	bottom: 0;
@@ -1887,8 +1890,8 @@ display: none !important;
 .sidebar {
 	background-color: none;
 	margin-top: .6vh;
-	border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+	border: .1vh solid #898989 !important;
+	background: radial-gradient(#32343961, #32343907) !important;
 	padding: .3vh;
 	border-radius: .4vh;
 	transform: scale(0.85);
@@ -1915,7 +1918,7 @@ display: none !important;
     align-items: center;
     flex-flow: row nowrap;
     width: 21vw;
-	background-color: #dc143c00;
+	background-color: #3234396100;
 	margin-top: -.4vh;
 }
 
@@ -1938,8 +1941,8 @@ display: none !important;
     margin-left: 0;
     width: .5vh;
     height: .5vh;
-	border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+	border: .1vh solid #898989 !important;
+	background: radial-gradient(#32343961, #32343907) !important;
     border-radius: .4vh;
     transition: 0.2s;
     cursor: pointer;
@@ -2006,12 +2009,12 @@ display: none !important;
 }
 
 .anims-block::-webkit-scrollbar-thumb {
-    background: #dc143c;
+    background: #32343961;
     border-radius: 100vh;
 }
 
 .anims-block::-webkit-scrollbar-thumb:hover {
-    background: #dc143c;
+    background: #32343961;
 }
 
 .anim {
@@ -2024,8 +2027,8 @@ display: none !important;
     margin: 0.35%;
     border-radius: 0.4vh;
 
-    border: .1vh solid #dc143c;
-	background-color:  #dc143c17;
+    border: .1vh solid #898989 !important;
+	background: radial-gradient(#32343961, #32343907) !important;
     cursor: pointer;
     transition: 0.2s;
     overflow: hidden;
@@ -2033,7 +2036,7 @@ display: none !important;
 }
 
 .anim:hover {
-	background-color:  #dc143c2c;
+	background-color:  #323439612c;
 	transform: scale(0.97);
 }
 
