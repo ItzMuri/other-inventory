@@ -14,7 +14,7 @@ cfg = {
     waitBeforeWalk = 5000, -- Wait before setting back walking style (If someone has a better method pls make a pull request because multichars are a pain in the ass)
 
     -- Do not touch
-    useTnotify = GetResourceState('t-notify') == 'started',
+    useTnotify = GetResourceState('okokNotify') == 'started',
     panelStatus = false,
 
     animActive = false,
