@@ -198,7 +198,7 @@ local function ToggleHotbar(toggle)
         [3] = PlayerData.items[3],
         [4] = PlayerData.items[4],
         [5] = PlayerData.items[5],
-        [41] = PlayerData.items[41],
+        [50] = PlayerData.items[50],
     }
 
     SendNUIMessage({
