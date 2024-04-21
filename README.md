@@ -1,3 +1,5 @@
+# SHOPS / ITEM INFO / COMBINE NOT WORKING
+
 <div align='center'><h3><a>QBCore Inventory Redesigned by !miquelmq20</a></h3></div>
 
 <br>
